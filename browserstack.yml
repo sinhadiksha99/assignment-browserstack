@@ -18,7 +18,7 @@ parallelsPerPlatform: 5
 browserstackLocal: false
 buildName: bstack-demo
 projectName: assignment-browserstack
-CUSTOM_TAG_1: "You can set a custom Build Tag here"
+CUSTOM_TAG_1: "my project"
 networkLogs: true
 consoleLogs: info
 percy: false
