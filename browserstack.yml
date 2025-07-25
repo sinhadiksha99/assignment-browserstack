@@ -10,13 +10,9 @@ platforms:
     osVersion: Monterey
     browserName: Safari
     browserVersion: 15.6
-  - deviceName: iPhone 13
-    osVersion: 15
-    browserName: Chromium
-    deviceOrientation: portrait
 parallelsPerPlatform: 5
 browserstackLocal: false
-buildName: bstack-demo
+buildName: assignment-browserstack-build
 projectName: assignment-browserstack
 CUSTOM_TAG_1: "my project"
 networkLogs: true
