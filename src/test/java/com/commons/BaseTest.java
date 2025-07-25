@@ -34,7 +34,7 @@ public class BaseTest extends GenericFunctions {
 
      protected void createImageDirectory() {
         try {
-            Files.createDirectories(Paths.get("actual_images"));
+            Files.createDirectories(Paths.get("downloaded_images"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -52,7 +52,7 @@ public class BaseTest extends GenericFunctions {
             if (agreeButton.isDisplayed()) {
                 agreeButton.click();
                 System.out.println("✓ Clicked cookie consent agree button");
-                Thread.sleep(1000); // Wait for popup to disappear
+                Thread.sleep(3000); // Wait for popup to disappear
             }
             
         } catch (Exception e) {

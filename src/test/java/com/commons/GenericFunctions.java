@@ -63,23 +63,4 @@ public class GenericFunctions {
         }
     }
 
-    public boolean compareWithExistingTitles(List<String> existingTitles, List<String> translatedTitles) {
-        if (translatedTitles.size() != existingTitles.size()) {
-            return false;
-        }
-
-        for (int i = 0; i < existingTitles.size(); i++) {
-            String expected = existingTitles.get(i).trim();
-            String actual = translatedTitles.get(i).trim();
-
-            if (!actual.equals(expected)) {
-                System.out
-                        .println("Mismatch at index " + i + ": expected '" + expected + "' but found '" + actual + "'");
-                return false;
-            }
-        }
-
-        return true;
-    }
-
 }

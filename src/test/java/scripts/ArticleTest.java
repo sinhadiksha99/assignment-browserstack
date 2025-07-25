@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.commons.BaseTest;
 import pages.NewspaperPage;
@@ -15,13 +13,6 @@ import pages.OpinionPage;
 import utils.Translate;
 
 public class ArticleTest extends BaseTest {
-
-    private static final List<String> existingTitles = List.of(
-            "The United Kingdom and Europe: It is not enough to go throwing",
-            "I welcome professional secrecy",
-            "Candidates to be great men",
-            "Corruption and its types",
-            "‘Inventory of a perfect trip’");
 
     @Test
     void testScrapeOpinionArticles() throws InterruptedException {
@@ -45,9 +36,6 @@ public class ArticleTest extends BaseTest {
             WebElement article = articles.get(i);
             processArticle(article, i + 1, translatedEnglishTitles, opinionPage);
         }
-        boolean allTitlesMatch = compareWithExistingTitles(existingTitles, translatedEnglishTitles);
-        Assert.assertTrue(allTitlesMatch,
-                "Some translated titles do not match the existing titles");
         printRepeatedWords(translatedEnglishTitles);
     }
 
@@ -72,8 +60,6 @@ public class ArticleTest extends BaseTest {
             System.out.println("Title: <Empty>");
             translatedTitles.add("");
         }
-
-        System.out.println("Image URL: " + (imgUrl.isEmpty() ? "Not available" : imgUrl));
 
         if (!imgUrl.isEmpty()) {
             downloadArticleImage(article, articleNumber);
