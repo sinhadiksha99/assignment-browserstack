@@ -22,7 +22,7 @@ platforms:
     osVersion: Monterey
     browserName: Safari
     browserVersion: 15.6
-parallelsPerPlatform: 5
+parallelsPerPlatform: 1
 browserstackLocal: false
 buildName: assignment-browserstack-build
 projectName: assignment-browserstack
