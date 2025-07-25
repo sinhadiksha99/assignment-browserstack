@@ -1,15 +1,17 @@
-package com.example.scripts;
+package scripts;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.example.utils.BaseTest;
+
+import com.commons.BaseTest;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class TitleTest extends BaseTest{
 
     @Test
-    void testElPaisSpanishContent() {
+    void testOfWebsite() {
         driver.get("https://elpais.com/");
         String title = driver.getTitle();
         System.out.println("Page title: " + title);

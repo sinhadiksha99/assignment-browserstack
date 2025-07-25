@@ -20,10 +20,18 @@ public class OpinionPage {
         PageFactory.initElements(driver, this);
     }
 
+    /**
+     * Returns the list of article elements on the opinion page.
+     */
     public List<WebElement> getArticles() {
         return articles;
     }
 
+    /**
+     * Extracts the title text from a given article element.
+     * @param article The WebElement representing a single article.
+     * @return The title text if found, otherwise an empty string.
+     */
     public String getTitle(WebElement article) {
         try {
             return article.findElement(By.xpath(".//header/h2/a")).getText().trim();
@@ -32,14 +40,24 @@ public class OpinionPage {
         }
     }
 
+    /**
+     * Extracts the URL (href attribute) from a given article element's title link.
+     * @param article The WebElement representing a single article.
+     * @return The URL string if found, otherwise an empty string.
+     */
     public String getUrl(WebElement article) {
         try {
             return article.findElement(By.xpath(".//header/h2/a")).getAttribute("href");
         } catch (Exception e) {
-            return "";
+            return "Url not found";
         }
     }
 
+    /**
+     * Gets the first image WebElement inside the given article element.
+     * @param article The WebElement representing a single article.
+     * @return The image WebElement if found, otherwise null.
+     */
     public WebElement getImageElement(WebElement article) {
         try {
             return article.findElement(By.xpath(".//img"));
@@ -53,7 +71,7 @@ public class OpinionPage {
             WebElement img = getImageElement(article);
             return img != null ? img.getAttribute("src") : "";
         } catch (Exception e) {
-            return "";
+            return "no image";
         }
     }
 }
