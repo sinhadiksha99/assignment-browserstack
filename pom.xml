@@ -38,11 +38,11 @@
     <version>7.11.0</version>
     <scope>test</scope>
 </dependency>
-<!-- <dependency>
+<dependency>
   <groupId>com.browserstack</groupId>
   <artifactId>browserstack-java-sdk</artifactId>
   <version>LATEST</version>
-</dependency> -->
+</dependency>
   </dependencies>
 
   <build>

@@ -1,26 +1,25 @@
-# userName: dikshasinha_sLg2a5
-# accessKey: orBHnZWRdC6sxviUBwsT
-# framework: testng
-# platforms:
-#   - os: Windows
-#     osVersion: 10
-#     browserName: Chrome
-#     browserVersion: 120.0
-#   - os: OS X
-#     osVersion: Monterey
-#     browserName: Safari
-#     browserVersion: 15.6
-#   - deviceName: iPhone 13
-#     osVersion: 15
-#     browserName: Chromium
-#     deviceOrientation: portrait
-# parallelsPerPlatform: 1
-# browserstackLocal: false
-# buildName: bstack-demo
-# projectName: Assignment
-# CUSTOM_TAG_1: "You can set a custom Build Tag here"
-# # Use CUSTOM_TAG_<N> and set more build tags as you need.
-# networkLogs: true
-# consoleLogs: info
-# percy: false
-# percyCaptureMode: auto
+userName: dikshasinha_sLg2a5
+accessKey: orBHnZWRdC6sxviUBwsT
+framework: testng
+platforms:
+  - os: Windows
+    osVersion: 10
+    browserName: Chrome
+    browserVersion: 120.0
+  - os: OS X
+    osVersion: Monterey
+    browserName: Safari
+    browserVersion: 15.6
+  - deviceName: iPhone 13
+    osVersion: 15
+    browserName: Chromium
+    deviceOrientation: portrait
+parallelsPerPlatform: 1
+browserstackLocal: false
+buildName: assignment-bstack
+projectName: Assignment
+CUSTOM_TAG_1: "You can set a custom Build Tag here"
+networkLogs: true
+consoleLogs: info
+percy: false
+percyCaptureMode: auto
