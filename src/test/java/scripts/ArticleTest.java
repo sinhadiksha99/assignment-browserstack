@@ -1,7 +1,10 @@
 package scripts;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -45,6 +48,7 @@ public class ArticleTest extends BaseTest {
         boolean allTitlesMatch = compareWithExistingTitles(existingTitles, translatedEnglishTitles);
         Assert.assertTrue(allTitlesMatch,
                 "Some translated titles do not match the existing titles");
+        printRepeatedWords(translatedEnglishTitles);
     }
 
     private void processArticle(WebElement article, int articleNumber, List<String> translatedTitles,
@@ -73,6 +77,35 @@ public class ArticleTest extends BaseTest {
 
         if (!imgUrl.isEmpty()) {
             downloadArticleImage(article, articleNumber);
+        }
+    }
+
+    /**
+     * Prints words repeated more than twice across all translated titles combined.
+     * Words are normalized to lowercase and stripped of punctuation.
+     */
+    private void printRepeatedWords(List<String> titles) {
+        Map<String, Integer> wordCount = new HashMap<>();
+
+        for (String title : titles) {
+            if (title == null || title.isEmpty()) continue;
+
+            String[] words = title.toLowerCase().split("\\W+");
+
+            for (String word : words) {
+                if (word.isEmpty()) continue;
+                wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+            }
+        }
+        boolean foundRepeated = false;
+        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+            if (entry.getValue() > 2) {
+                System.out.println("'" + entry.getKey() + "' : " + entry.getValue());
+                foundRepeated = true;
+            }
+        }
+        if (!foundRepeated) {
+            System.out.println("No words repeated more than twice.");
         }
     }
 
