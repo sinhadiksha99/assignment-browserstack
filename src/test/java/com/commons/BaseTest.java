@@ -44,7 +44,7 @@ public class BaseTest extends GenericFunctions {
     public void handleCookieConsent() {
         try {
             // Wait briefly for cookie popup to appear
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             
             // Check if cookie consent button is present and visible
             WebElement agreeButton = driver.findElement(By.id("didomi-notice-agree-button"));
