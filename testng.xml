@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TestSuite">
-    <test name="BasicTest">
+<suite name="ParallelSuite" parallel="classes" thread-count="5">
+    <test name="ParallelTests">
         <classes>
-            <class name="com.example.scripts.ArticleTest"/>
-            <class name="com.example.scripts.TitleTest"/>
+            <class name="scripts.ArticleTest"/>
+            <class name="scripts.TitleTest"/>
         </classes>
     </test>
 </suite>
